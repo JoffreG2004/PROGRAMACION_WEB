@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Superior de Estudios Modernos - Sistema de Gestión Académica</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="public/css/style.css">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Elementos flotantes de fondo -->
+    <div class="floating-elements">
+        <div class="floating-element" style="left: 10%; animation-delay: 0s;">📚</div>
+        <div class="floating-element" style="left: 20%; animation-delay: 2s;">🎓</div>
+        <div class="floating-element" style="left: 30%; animation-delay: 4s;">📖</div>
+        <div class="floating-element" style="left: 40%; animation-delay: 6s;">✏️</div>
+        <div class="floating-element" style="left: 50%; animation-delay: 8s;">🏫</div>
+        <div class="floating-element" style="left: 60%; animation-delay: 1s;">💡</div>
+        <div class="floating-element" style="left: 70%; animation-delay: 3s;">🌟</div>
+        <div class="floating-element" style="left: 80%; animation-delay: 5s;">🎯</div>
+        <div class="floating-element" style="left: 90%; animation-delay: 7s;">🚀</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-mortarboard-fill me-2"></i>
+                ISEM
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">
+                            <i class="bi bi-house"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acceso">
+                            <i class="bi bi-person-check"></i> Acceso
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">
+                            <i class="bi bi-telephone"></i> Contacto
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Botones de la derecha -->
+                <div class="d-flex align-items-center">
+                    <!-- Botón Modo Oscuro -->
+                    <button id="darkModeBtn" class="btn btn-outline-light btn-sm me-3" title="Cambiar modo">
+                        <i class="bi bi-moon-fill" id="darkModeIcon"></i>
+                        <span id="darkModeText" class="d-none d-md-inline ms-1">Modo Oscuro</span>
+                    </button>
+
+                    <!-- Botón de Login -->
+                    <button class="btn btn-success btn-sm" id="btn-actualizar-admin">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        <span class="d-none d-md-inline ms-1">ADMINISTRADOR</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <!-- Header Principal -->
+    <header class="main-header" id="inicio">
+        <div class="container">
+            <div class="logo-container text-center fade-in-up">
+                <div class="logo-icon">🏫</div>
+                <h1 class="institute-name">Instituto Superior de Estudios Modernos</h1>
+                <p class="institute-subtitle">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    Sistema de Gestión Académica Digital
+                </p>
+                <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">
+                        <i class="bi bi-shield-check"></i> Seguro
+                    </span>
+                    <span class="badge bg-light text-dark me-2">
+                        <i class="bi bi-lightning"></i> Rápido
+                    </span>
+                    <span class="badge bg-light text-dark">
+                        <i class="bi bi-heart"></i> Confiable
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Selección de Usuario -->
+    <section class="selection-container" id="acceso">
+        <div class="container">
+            <h2 class="section-title fade-in-up">
+                <i class="bi bi-person-check"></i>
+                ¿Cómo deseas acceder?
+            </h2>
+
+            <div class="user-cards">
+                <!-- Tarjeta Estudiante -->
+                <div class="user-card fade-in-up delay-1">
+                    <div class="user-icon">
+                        <i class="bi bi-person-workspace"></i>
+                    </div>
+                    <h3 class="user-title">
+                        <i class="bi bi-mortarboard"></i>
+                        Soy Estudiante
+                    </h3>
+                    <p class="user-description">
+                        Accede a tus materias, consulta tus calificaciones,
+                        revisa tu promedio general y mantente al día con tu progreso académico.
+                    </p>
+                    <div class="mb-3">
+                        <small class="text-muted">
+                            <i class="bi bi-check-circle-fill text-success"></i> Ver notas por materia<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Consultar promedio general<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Histórico académico
+                        </small>
+                    </div>
+                    <button class="btn-custom" id="btn-estudiante" type="button">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Acceder como Estudiante
+                    </button>
+                </div>
+
+                <!-- Tarjeta Profesor -->
+                <div class="user-card fade-in-up delay-2">
+                    <div class="user-icon">
+                        <i class="bi bi-person-fill-gear"></i>
+                    </div>
+                    <h3 class="user-title">
+                        <i class="bi bi-person-badge"></i>
+                        Soy Profesor
+                    </h3>
+                    <p class="user-description">
+                        Gestiona tus materias, registra calificaciones de tus estudiantes
+                        y mantén un control completo de tu labor docente.
+                    </p>
+                    <div class="mb-3">
+                        <small class="text-muted">
+                            <i class="bi bi-check-circle-fill text-success"></i> Gestionar materias<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Registrar calificaciones<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Reportes académicos
+                        </small>
+                    </div>
+                    <button class="btn-custom btn-secondary" id="btn-login" type="button">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Acceder como Profesor
+                    </button>
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <!-- Modal de Login Profesor -->
+            <div class="modal fade" id="ModalProfesor" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-success text-white">
+                            <h5 class="modal-title">
+                                <i class="bi bi-shield-lock me-2"></i>
+                                Acceso de Profesor
+                            </h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="loginError" class="alert alert-danger d-none">
+                                <i class="bi bi-exclamation-triangle"></i>
+                                Usuario o contraseña incorrectos
+                            </div>
+
+                            <form id="ProfesorForm">
+                                <div class="mb-3">
+                                    <label for="adminProfesor" class="form-label">
+                                        <i class="bi bi-person"></i> Usuario
+                                    </label>
+                                    <input type="text" class="form-control" id="loginProfesor" required
+                                        placeholder="Ingrese su usuario">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="adminContraseña" class="form-label">
+                                        <i class="bi bi-lock"></i> Contraseña
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="ProfesorContraseña" required
+                                            placeholder="Ingrese su contraseña">
+                                        <button class="btn btn-outline-secondary" type="button"
+                                            onclick="togglePasswordModal()">
+                                            <i class="bi bi-eye" id="toggleIconModal"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <button id="btn-profesor" class="btn btn-success" type="button">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                        Ingresar al Panel
+                                    </button>
+                                </div>
+                            </form>
+
+                            <hr>
+                            <div class="text-center">
+                                <small class="text-muted">
+                                    <i class="bi bi-info-circle"></i>
+                                    Bienvenido al sistema de gestión de profesores.
+
+                                </small>
+                            </div>
+
+                            <!-- Información de profesores -->
+                            <div class="mt-3 p-3 bg-light rounded">
+                                <small class="text-muted">
+                                    <i class="bi bi-shield-check"></i>
+                                    <strong>Sistema Seguro:</strong> Las credenciales se verifican contra la base de
+                                    datos.<br>
+                                    <i class="bi bi-database-lock"></i>
+                                    <strong>Sistema Vigilado:</strong> Todas las acciones son registradas y
+                                    monitoreadas.<br>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de Login Estudiante -->
+            <div class="modal fade" id="ModalEstudiante" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title">
+                                <i class="bi bi-mortarboard me-2"></i>
+                                Acceso de Estudiante
+                            </h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="EstudianteForm">
+                                <div class="mb-3">
+                                    <label for="loginEstudiante" class="form-label">
+                                        <i class="bi bi-person"></i> Usuario
+                                    </label>
+                                    <input type="text" class="form-control" id="loginEstudiante" required
+                                        placeholder="Ingresa tu usuario">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="EstudianteContraseña" class="form-label">
+                                        <i class="bi bi-lock"></i> Contraseña
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="EstudianteContraseña" required
+                                            placeholder="Ingresa tu contraseña">
+                                        <button class="btn btn-outline-secondary" type="button"
+                                            onclick="togglePasswordModalEstudiante()">
+                                            <i class="bi bi-eye" id="toggleIconModalEstudiante"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <button id="btn-estudiante-login" class="btn btn-info" type="button">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                        Ingresar al Portal
+                                    </button>
+                                </div>
+                            </form>
+
+                            <hr>
+                            <div class="text-center">
+                                <small class="text-muted">
+                                    <i class="bi bi-info-circle"></i>
+                                    Bienvenido al portal de estudiantes.
+                                </small>
+                            </div>
+
+                            <!-- Información de estudiantes -->
+                            <div class="mt-3 p-3 bg-light rounded">
+                                <small class="text-muted">
+                                    <i class="bi bi-shield-check"></i>
+                                    <strong>Acceso Seguro:</strong> Las credenciales se verifican contra la base de
+                                    datos.<br>
+                                    <i class="bi bi-graph-up"></i>
+                                    <strong>Consulta Académica:</strong> Revisa tus notas y promedio en tiempo real.<br>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const ModalProfesor = new bootstrap.Modal(
+                    document.getElementById('ModalProfesor'), {
+                    keyboard: false
+                }
+                );
+
+                // Conectar el botón del navbar con el modal
+                document.getElementById('btn-login').addEventListener('click', function () {
+                    fetch('app/buscarTodosProfesores.php') // Archivo que devuelve todos los profesores en un arreglo JSON
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Error en la respuesta del servidor');
+                            }
+                            return response.json();
+                        })
+                        .then(profesores => {
+                            // Verificar si hay error en la respuesta
+                            if (profesores.error) {
+                                throw new Error(profesores.error);
+                            }
+
+                            // Mostrar el modal
+                            ModalProfesor.show();
+
+                            // Removemos listeners previos para evitar duplicados
+                            const btnProfesor = document.getElementById('btn-profesor');
+                            const nuevoBtnProfesor = btnProfesor.cloneNode(true);
+                            btnProfesor.parentNode.replaceChild(nuevoBtnProfesor, btnProfesor);
+
+                            nuevoBtnProfesor.addEventListener('click', function () {
+                                const usuario = document.getElementById('loginProfesor').value.trim();
+                                const password = document.getElementById('ProfesorContraseña').value.trim();
+                                const errorDiv = document.getElementById('loginError');
+
+                                if (!usuario || !password) {
+                                    errorDiv.innerHTML = '<i class="bi bi-exclamation-triangle"></i> Por favor complete todos los campos';
+                                    errorDiv.classList.remove('d-none');
+                                    return;
+                                } else {
+                                    errorDiv.classList.add('d-none');
+
+                                    // Buscar el profesor cuyo usuario y contraseña coincidan
+                                    const profesorValido = profesores.find(profesor =>
+                                        profesor.usuario === usuario && profesor.contrasena === password
+                                    );
+
+                                    if (profesorValido) {
+                                        // Enviar el nombre completo del profesor al archivo profesor.php
+                                        const nombreCompleto = `${profesorValido.nombre} ${profesorValido.apellido}`;
+
+                                        fetch('profesor.php', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({ nombre: nombreCompleto, id: profesorValido.id })
+                                        });
+
+                                        Swal.fire({
+                                            icon: 'info',
+                                            title: 'Verificando credenciales...',
+                                            html: '<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>',
+                                            showConfirmButton: false,
+                                            allowOutsideClick: false,
+                                            allowEscapeKey: false
+                                        });
+
+                                        setTimeout(() => {
+                                            ModalProfesor.hide();
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: '¡Acceso concedido!',
+                                                text: `Bienvenido ${nombreCompleto}`,
+                                                timer: 1500,
+                                                showConfirmButton: false,
+                                                timerProgressBar: true
+                                            });
+
+                                            setTimeout(() => {
+                                                window.location.href = 'profesor.php';
+                                            }, 1500);
+                                        }, 800);
+
+                                    } else {
+                                        Swal.fire({
+                                            icon: 'info',
+                                            title: 'Verificando credenciales...',
+                                            html: '<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>',
+                                            showConfirmButton: false,
+                                            allowOutsideClick: false,
+                                            allowEscapeKey: false
+                                        });
+
+                                        setTimeout(() => {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Error de acceso',
+                                                text: 'Usuario o contraseña incorrectos',
+                                                timer: 3000,
+                                                showConfirmButton: false,
+                                                timerProgressBar: true
+                                            });
+                                        }, 800);
+                                    }
+                                }
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error al obtener profesores:', error);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error de conexión',
+                                text: 'No se pudieron cargar los datos de profesores. Verifique la conexión a la base de datos.',
+                                timer: 3000,
+                                showConfirmButton: false,
+                                timerProgressBar: true
+                            });
+                        });
+                });
+
+                // Modal y funcionalidad para Estudiantes
+                const ModalEstudiante = new bootstrap.Modal(
+                    document.getElementById('ModalEstudiante'), {
+                    keyboard: false
+                }
+                );
+
+                // Conectar el botón del estudiante con el modal
+                document.getElementById('btn-estudiante').addEventListener('click', function () {
+                    ModalEstudiante.show();
+                });
+
+                // Función para alternar visibilidad de contraseña del estudiante
+                function togglePasswordModalEstudiante() {
+                    const passwordInput = document.getElementById('EstudianteContraseña');
+                    const toggleIcon = document.getElementById('toggleIconModalEstudiante');
+
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        toggleIcon.classList.remove('bi-eye');
+                        toggleIcon.classList.add('bi-eye-slash');
+                    } else {
+                        passwordInput.type = 'password';
+                        toggleIcon.classList.remove('bi-eye-slash');
+                        toggleIcon.classList.add('bi-eye');
+                    }
+                }
+
+                // Login de estudiante
+                document.getElementById('btn-estudiante-login').addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const usuario = document.getElementById('loginEstudiante').value;
+                    const password = document.getElementById('EstudianteContraseña').value;
+
+                    if (!usuario.trim() || !password.trim()) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Campos requeridos',
+                            text: 'Por favor complete todos los campos',
+                            timer: 3000,
+                            showConfirmButton: false
+                        });
+                        return;
+                    }
+
+                    const formData = new FormData();
+                    formData.append('usuario', usuario);
+                    formData.append('password', password);
+
+                    // Mostrar loading
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Verificando credenciales...',
+                        html: '<div class="spinner-border text-info" role="status"><span class="visually-hidden">Cargando...</span></div>',
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        allowEscapeKey: false
+                    });
+
+                    fetch('app/validar_estudiante.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                // Guardar datos del estudiante en sessionStorage
+                                sessionStorage.setItem('estudianteData', JSON.stringify(data.estudiante));
+
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: '¡Bienvenido!',
+                                    text: `Hola ${data.estudiante.nombre} ${data.estudiante.apellido}`,
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                    timerProgressBar: true
+                                });
+
+                                setTimeout(() => {
+                                    window.location.href = 'estudiantes.php';
+                                }, 1500);
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error de acceso',
+                                    text: data.message || 'Usuario o contraseña incorrectos',
+                                    timer: 3000,
+                                    showConfirmButton: false,
+                                    timerProgressBar: true
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error de conexión',
+                                text: 'No se pudo conectar con el servidor',
+                                timer: 3000,
+                                showConfirmButton: false,
+                                timerProgressBar: true
+                            });
+                        });
+                });
+
+
+            </script>
+
+
+
+            <!-- Enlace de prueba de conexión -->
+            <div class="text-center mt-5 fade-in-up delay-3">
+                <div class="card mx-auto" style="max-width: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-database-check"></i>
+                            Estado del Sistema
+                        </h5>
+                        <p class="card-text">Verificar conexión con la base de datos</p>
+                        <a href="conexion/db.php" class="btn btn-outline-primary">
+                            <i class="bi bi-database-gear"></i>
+                            Probar Conexión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Login Administrador -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-shield-lock me-2"></i>
+                        Acceso de Administrador
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="loginErrorAdmin" class="alert alert-danger d-none">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        Usuario o contraseña incorrectos
+                    </div>
+
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="adminUsuario" class="form-label">
+                                <i class="bi bi-person"></i> Usuario
+                            </label>
+                            <input type="text" class="form-control" id="adminUsuario" required
+                                placeholder="Ingrese su usuario">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="adminPassword" class="form-label">
+                                <i class="bi bi-lock"></i> Contraseña
+                            </label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="adminPassword" required
+                                    placeholder="Ingrese su contraseña">
+                                <button class="btn btn-outline-secondary" type="button" onclick="togglePasswordModal()">
+                                    <i class="bi bi-eye" id="toggleIconModal"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button id="btn-admin-login" class="btn btn-success">
+                                <i class="bi bi-box-arrow-in-right"></i>
+                                Ingresar al Panel
+                            </button>
+                        </div>
+                    </form>
+
+                    <hr>
+                    <div class="text-center">
+                        <small class="text-muted">
+                            <i class="bi bi-info-circle"></i>
+                            Acceso solo para personal autorizado
+                        </small>
+                    </div>
+
+                    <!-- Información de seguridad -->
+                    <div class="mt-3 p-3 bg-light rounded">
+                        <small class="text-muted">
+                            <i class="bi bi-shield-check"></i>
+                            <strong>Sistema Seguro:</strong> Las credenciales se verifican contra la base de datos.<br>
+                            <i class="bi bi-database-lock"></i>
+                            <strong>Cifrado:</strong> Todas las contraseñas están protegidas con hash.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-icon">
+                    <i class="bi bi-building"></i>
+                </div>
+                <div>
+                    <p class="mb-0">
+                        © 2025 Instituto Superior de Estudios Modernos -
+                        <i class="bi bi-heart-fill text-success"></i>
+                        Educación de Excelencia
+                    </p>
+                    <small class="text-muted">
+                        <i class="bi bi-shield-lock"></i>
+                        Sistema Seguro |
+                        <i class="bi bi-telephone"></i>
+                        Soporte: 0998521340
+                        <br>
+                        <i class="bi bi-copyright"></i>
+                        <span class="text-muted">
+                            Copyright ©Ing. Joffre Gómez 2025
+                        </span>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // Crear instancia del modal de login
+        const modalLogin = new bootstrap.Modal(
+            document.getElementById('loginModal'), {
+            keyboard: false
+        });
+
+        // Conectar el botón del navbar con el modal
+        document.getElementById('btn-actualizar-admin').addEventListener('click', function () {
+            fetch('app/buscarAdminPorId.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }, body: JSON.stringify({ id: 1 })
+            }).then(function (response) {
+                return response.json();
+            }).then(function (request) {
+                // Mostrar el modal
+                modalLogin.show();
+
+
+
+
+                document.getElementById('btn-admin-login').addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const usuario = document.getElementById('adminUsuario').value;
+                    const password = document.getElementById('adminPassword').value;
+
+                    const errorDiv = document.getElementById('loginErrorAdmin');
+
+
+
+
+
+                    if (!usuario.trim() || !password.trim()) {
+                        errorDiv.innerHTML = '<i class="bi bi-exclamation-triangle"></i> Por favor complete todos los campos';
+                        errorDiv.classList.remove('d-none');
+                        console.log(usuario, password);
+                        return;
+                    }
+
+
+
+
+
+
+
+                    if (usuario == request.usuario && password == request.password) {
+                        console.log('Acceso concedido');
+                    } else {
+                        console.log('Acceso denegado');
+                    }
+
+
+
+
+
+                    if (usuario == request.usuario && password == request.password) {
+                        // Mostrar carga inmediatamente
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Verificando credenciales...',
+                            html: '<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>',
+                            showConfirmButton: false,
+                            allowOutsideClick: false,
+                            allowEscapeKey: false
+                        });
+
+                        // Después de un momento mostrar éxito
+                        setTimeout(() => {
+                            modalLogin.hide();
+                            Swal.fire({
+                                icon: 'success',
+                                title: '¡Acceso concedido!',
+                                text: 'Redirigiendo al panel...',
+                                timer: 1500,
+                                showConfirmButton: false,
+                                timerProgressBar: true
+                            });
+
+                            setTimeout(() => {
+                                window.location.href = 'admin.php';
+                            }, 1500);
+                        }, 800);
+
+                    } else {
+                        // Mostrar carga inmediatamente para error también
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Verificando credenciales...',
+                            html: '<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div>',
+                            showConfirmButton: false,
+                            allowOutsideClick: false,
+                            allowEscapeKey: false
+                        });
+
+                        // Después mostrar error
+                        setTimeout(() => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error de acceso',
+                                text: 'Usuario o contraseña incorrectos',
+                                timer: 3000,
+                                showConfirmButton: false,
+                                timerProgressBar: true
+                            });
+                        }, 800);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+
+    <!-- Animaciones personalizadas -->
+    <script>
+        // Agregar clase de animación cuando el elemento entra en vista
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos con animación
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Funcionalidad Modo Oscuro
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const darkModeText = document.getElementById('darkModeText');
+        const body = document.body;
+
+        // Verificar si hay preferencia guardada
+        const currentMode = localStorage.getItem('darkMode');
+        if (currentMode === 'enabled') {
+            enableDarkMode();
+        }
+
+        darkModeBtn.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        });
+
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            darkModeIcon.classList.remove('bi-moon-fill');
+            darkModeIcon.classList.add('bi-sun-fill');
+            darkModeText.textContent = 'Modo Claro';
+            localStorage.setItem('darkMode', 'enabled');
+        }
+
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            darkModeIcon.classList.remove('bi-sun-fill');
+            darkModeIcon.classList.add('bi-moon-fill');
+            darkModeText.textContent = 'Modo Oscuro';
+            localStorage.setItem('darkMode', 'disabled');
+        }
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Espacio para el navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Cambiar navbar al hacer scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Función para mostrar/ocultar contraseña en el modal
+        function togglePasswordModal() {
+            const passwordField = document.getElementById('adminPassword');
+            const passwordProfesor = document.getElementById('ProfesorContraseña');
+            const toggleIcon = document.getElementById('toggleIconModal');
+
+            if (passwordField.type === 'password' && passwordProfesor.type === 'password') {
+                passwordField.type = 'text';
+                passwordProfesor.type = 'text';
+                toggleIcon.classList.remove('bi-eye');
+                toggleIcon.classList.add('bi-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                passwordProfesor.type = 'password';
+                toggleIcon.classList.remove('bi-eye-slash');
+                toggleIcon.classList.add('bi-eye');
+            }
+        }
+    </script>
+</body>
+
+</html>
